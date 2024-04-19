@@ -1,0 +1,1583 @@
+@font-face {
+
+
+font-family: dosis;
+
+    src: url(./Media/Dosis/Dosis-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: clockFont;
+    src: url(./clockFont/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family:kanit ;
+    src: url(./Kanit-Regular.ttf);
+}
+@font-face {
+    font-family: oswald;
+    src: url(./Oswald-VariableFont_wght.ttf);
+}
+    :root{
+    --pri-colorLight:#1d90c1;
+    --pri-color:#1c4791;
+    --pri-colorDark:#041e54;
+    --text-color:aliceblue;
+  
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.flip-container {
+    position: absolute;
+    right:16px ;
+    transition: .5s ease-in-out;
+    z-index: 10;
+    top: 6vh;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    height: 150px !important;
+    width: 270px !important;
+    -webkit-backdrop-filter: blur(6px);
+    perspective: 1000px;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    width: 100% !important;
+
+    height: 100% !important;
+    
+    display: flex;
+    border-radius: 30px;
+    background: rgba(44, 61, 65, 0.25);
+    box-shadow: 0 0px 30px rgba(91, 91, 91, 0.301);
+    justify-content: center;
+    align-items: center;
+
+}
+
+body{
+    background: rgb(29, 29, 29);
+    
+    overflow-x: hidden;
+    position: relative;
+}
+
+#container #logo{
+    transform: scale(0.01) !important;
+    display: none;
+}
+.siteIntro{
+    position: absolute;
+    left: 6%;
+    height: 300px;
+    width: 40vw;
+    top: 20%;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.PicBack{
+    width: 100vw;
+    position: absolute;
+    z-index: -2;
+    height: 100vh;
+    background: url(./Media/pexels-mikhail-nilov-7827892.jpg)no-repeat center/cover;
+
+}
+.siteIntro h1{
+    font-size: 40px;
+    /* color:var(--pri-colorDark); */
+    color: aliceblue;
+    line-height: 60px;
+    margin-bottom: 50px;
+
+
+
+}
+.auths{
+    display: flex;
+    
+    justify-content: space-between;
+    width: 60%;
+}
+.auths button{
+    width: 140px;
+    transition: .2s ease-in-out;
+    border-radius: 40px;
+    background: var(--pri-color);
+    box-shadow: 10px 10px 30px rgba(27, 27, 26, 0.274);
+    border: 1px solid var(--pri-color);
+    color: aliceblue;
+    font-size: 17px;
+    font-weight: 700;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    height: 40px;
+
+}
+
+
+.auths .logBtn:hover {
+    cursor: pointer;
+    letter-spacing: 2px;
+    width: 56%;
+
+}
+.auths .signBtn:hover {
+    cursor: pointer;
+    letter-spacing: 2px;
+    width:56%;
+
+}
+.cover{
+    width: 100vw;
+    height: 100vh;
+    background:rgba(0, 0, 0, 0.32);
+    position: absolute;
+    /* z-index: 3; */
+    bottom: 0;
+    right: 0;
+}
+.authCard{
+    position: absolute;
+    /* z-index: 5 !important; */
+    right: -100%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 80px 0 0 80px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.9);  
+      height: 100vh;
+    width: 40vw;
+}
+.authCard .authPlacer{
+    width: 87%;
+    margin: 0 auto;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.authPlacer p{
+    color: var(--pri-colorDark);
+    font-size: 19px;
+}
+.authTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    
+}
+.PandaLogo{
+    width:120px;
+}
+.PandaLogo img{
+    width: inherit;
+}
+.authTitle h1{
+    font-size: 35px;
+}
+.authTitle p{
+    font-size: 21px;
+    margin: 10px 0;
+
+}
+.authInputs{
+    height: auto;
+    width: 90%;
+    display: flex;
+
+    margin:  0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.authInputs input{
+    width: 100%;
+    height: 31px;
+    margin-top:  10px;
+    background: transparent;
+    border-top: 0px ;
+    border-left: 0px ;
+    border-right: 0px ;
+    border-bottom: 2px solid var(--pri-colorDark);
+    padding: 3px 0 3px 15px;
+    font-size: 17px;
+}
+.authInputs input::placeholder{
+    color: var(--pri-colorDark);
+}
+.authInputs button{
+    width: 100%;
+    /* height: 55px; */
+    color: aliceblue;
+    background: var(--pri-color);
+    border-radius: 50px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    border: transparent;
+    transition: .2s ease-in-out;
+    margin: 20px 0;
+}
+.authInputs button:hover{
+    letter-spacing: 0;
+
+    transform: scale(.9);
+    cursor: pointer;
+}
+#signCard{
+    transition: .4s ease-in;
+    right: -100%;
+    z-index: 25 !important;
+
+}
+#logCard{
+    transition: .4s ease-in;
+    right: -100%;
+    z-index: 15 !important;
+
+}
+
+.swal2-title{
+    font-size: 20px;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    font-weight: 500;
+    z-index: 10;
+  }
+ .swal2-input-label{
+    font-size: 16px;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    font-weight: 500;
+    z-index: 10; 
+ }
+.swal2-validation-message{
+    font-size: 16px;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    font-weight: 500;
+    z-index: 10;   
+}
+.swal2-html-container{
+    font-size: 13px;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    font-weight: 300;
+    z-index: 10;   
+}
+.Gblog{
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    z-index: 15;
+    position: relative;
+    color: aliceblue;
+    background: rgb(29, 29, 29);
+
+}
+.gplacer{
+    width: 60%;
+    margin: 0 auto;
+}
+.gplacer h1{
+    text-align: center;
+    font-size: 50px;
+    padding: 20px;
+}
+.blogcard{
+    margin:10px  0 ;
+}
+.blogcard p{
+    color: rgb(157, 161, 162);
+    font-size:18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.blogcard a{
+    text-decoration: none;
+    color: var(--pri-colorLight);
+}
+
+.blogcard h4{
+    font-size: 25px !important;
+    margin: 20px 0 10px 0;
+}
+
+.separatorLF{
+    width: 90%;
+    margin: 0 auto;
+    background: rgb(123, 156, 162);
+    height: 1px;
+}
+.footer{
+    width: 100vw;
+    margin-top: 50px;
+    height: 70px;
+    /* background: transparent; */
+
+}
+.footPlacer{
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(121, 121, 121);
+}
+.footPlacer p{
+    font-size: 13px;
+}
+.leftfoot img {
+    width: 20px;
+    margin-right: 10px;
+
+
+}
+.leftfoot{
+    display: flex;
+    align-items:center;
+    
+}
+
+#heroOne,#fidiBody{
+    width: 100vw !important;
+    overflow-x: hidden;
+    height: 100vh !important;
+}
+.backVideo{
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    object-fit: cover;
+    height: 100vh;
+    
+}
+.backVideo video{
+    /* display: none; */
+    position: absolute;
+    z-index: -1;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      
+}
+
+.heroCont{
+    position: absolute;
+    z-index: 3;
+}
+.videoOverlay{
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+.rainOverlay{
+    background: rgba(0, 0, 0, 3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+}
+.rainOverlay .rainDrop{
+    width: 100%;
+    height: 100%;
+}
+
+
+.blog{
+    transition: .3s ease-in-out;
+    width: 100%;
+    display: flex;
+    background: rgba(44, 61, 65, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 12px 12px ;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    height: 4vh;
+    justify-content: center;
+    align-items: center;
+}
+.blogWrap{
+    width: 95%;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.actBlog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+    width: 100%;
+}
+.actBlog p{
+    color: aliceblue;
+    font-size: 16px;
+    font-family: sans-serif !important;
+}
+.actBlog p span{
+    color:var(--pri-color);
+}
+.actBlog img{
+    margin-right: 8px;
+    width: 20px;
+}
+.blogCancel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: 100%;
+    color: aliceblue;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    width: 50px;
+}
+.blogCancel:hover i{
+    color: rgb(211, 163, 163);
+}
+
+.timerWrap{
+    position: absolute;
+    right: 1%;
+    transform: scale(.9);
+    transition: .3s ease-in-out;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px !important;
+    max-height:25vh ;
+    width: auto;
+    top: 6vh;
+    background: rgba(44, 61, 65, 0.25);
+    /* background: green; */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+}
+.actTimer{
+    width: 100%;
+    height: auto !important;
+    /* height: 100px !important; */
+    display: flex;
+    /* background: green; */
+    justify-content: center;
+    align-items: center;
+}
+.actTimer i{
+    /* color: red; */
+    font-size: 25px;
+    transition: .2s ease-in-out;
+    color: aliceblue;
+    cursor: pointer;
+    margin: 10px;
+}
+.actTimer p{
+    font-size: 50px;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+.actTimer input{
+   width: 70px;
+   height: 60px;
+   background: transparent;
+   padding: 10px;
+   color: aliceblue;
+   transition: .78s ease-in-out;
+   font-family:clockFont;
+   font-size: 55px;
+   text-align: center;
+   font-weight: 100;
+   border: transparent;
+   font-weight:400;
+}
+.actTimer input[type=number]::-webkit-inner-spin-button,
+.actTimer input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    
+}
+.timerSettings{
+    width: 40% !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px auto;
+    height: 50px;
+}
+.timerSettings i{
+    font-size: 20px;
+    transition: .2s ease-in-out;
+    color: aliceblue;
+    cursor: pointer;
+    
+    
+}
+.timerSettings i:hover{
+    color: #aaa6f2;
+}
+.separatorL{
+    width: 90%;
+    margin: 5px auto;
+    background: rgba(240, 248, 255, 0.366);
+    height: 1px;
+}
+
+.timerQoute p{
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    color: aliceblue;
+}
+.timerProgress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    width: 100%;
+    height: 30px;
+
+}
+.progresscont{
+    width: 85%;
+    height: 5px;
+    border-radius: 15px;
+    margin: 0 5px;
+    background: rgb(241, 241, 241);
+}
+.progressBar{
+    transition: width 1s linear;
+    width: 0%;
+    -webkit-box-shadow:0px 0px 14px 0px var(--pri-colorLight);
+    -moz-box-shadow: 0px 0px 14px 0px var(--pri-colorLight);
+    box-shadow: 0px 0px 14px 0px var(--pri-colorLight);
+    
+    height: inherit;
+    border-radius: 15px;
+    background:var(--pri-colorLight);
+    
+}
+
+.timerProgress p
+{
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    color:aliceblue;
+}
+.options{
+    /* background: red; */
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    transition: .3s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    bottom: 10px;
+    position: absolute;
+
+}
+.gplacer h4{
+    font-size: 25px;
+    color: rgb(223, 223, 223);
+}
+.optCont{
+    width: 45vw;
+    height: inherit;
+    margin: 0 auto;
+    background: rgba(44, 61, 65, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+    border-radius: 10px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.optCard{
+    width: 120px;
+    display: flex;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    justify-content: center;
+    transition: .2s ease-in-out;
+    align-items: center;
+    flex-direction: column;
+    height: 90%;
+    cursor: pointer;
+    padding: 3px;
+    font-size: 22px;
+    color: aliceblue;
+    border-radius: 10px;
+}
+.optCard p{
+    font-size: 18px;
+}
+.optCard:hover{
+    transform: scale(1.1);
+
+    background: rgba(198, 228, 234, 0.25);
+
+
+}
+.backgroundMenu{
+    width: 40vw;
+    transition: .3s ease-in-out;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -100%;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%);
+    height: 50vh;
+    background: rgba(130, 166, 173, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+    border-radius: 10px;
+
+}
+.genPlacer{
+    width: 97%;
+    margin: 10px auto;
+}
+
+.genPlacer .optCancel{
+    height: 15px;
+    width: 100%;
+    
+    display: flex;
+    justify-content: end;
+}
+.optCancel i{
+    font-size: 18px;
+    cursor: pointer;
+    color: aliceblue;
+
+}
+.genWrap{
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+
+}
+.genWrap h3{
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    color: aliceblue;
+    font-size: 20px;
+}
+
+
+
+.genWrap .FotoVida{
+    width:60%;
+    padding-bottom: 10px;
+    height: 27px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+
+}
+.FotoVida button{
+    width: 40%;
+    border-radius: 8px;
+    color: aliceblue;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    border: transparent;
+    background: rgba(167, 214, 223, 0.25);
+
+    
+}
+.FotoVida button:hover{
+    transform: scale(1.08);
+}
+
+.themeCatWrap{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.themeCatWrap .themeCatCard{
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(.9);
+    transition: .3s ease-in-out;
+    border-radius: 10px;
+    width: 35%;
+    background: rgba(255, 255, 255, 0.3);
+}
+.themeCatCard:hover{
+    cursor: pointer;
+    transform: scale(1);
+}
+.selectedCat{
+    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.selectedWrap{
+    width: inherit;
+    overflow-x: hidden;
+    height:40vh;
+    overflow-y: scroll;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.selectCard {
+    width: 18vw;
+    float: left;
+    margin: 5px;
+    border-radius: 10px;
+    transition: .2s ease-in-out;
+
+}
+.selectCardV {
+    width: 18vw;
+    float: left;
+    height: 101px;
+    margin: 5px;
+    border-radius: 10px;
+    transition: .2s ease-in-out;
+
+}
+.selectCard img{
+    width: inherit;
+    aspect-ratio: 16/9;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 10px;
+    
+}
+.selectCardV video{
+    width: inherit;
+    height: inherit;
+    aspect-ratio: 16/9;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+.selectCardV canvas{
+    width: inherit;
+    height: inherit;
+    aspect-ratio: 16/9;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+.selectCard:hover{
+transform: scale(.95);
+}
+.selectCardV:hover{
+transform: scale(.95);
+}
+::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f19c;
+    border-radius: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--pri-colorLight);
+    border-radius: 6px;
+    transition: .2s ease-in-out;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--pri-color);
+    cursor: pointer;
+  }
+  /* .volume{
+    width: 100px;
+    color: var(--pri-colorLight);
+    height: 5px;
+    border-radius: 20px;
+
+    
+  } */
+
+    /* Styling for the range input */
+    input[type="range"] {
+        -webkit-appearance: none;
+        width: 200px;
+        height: 5px;
+        border-radius: 5px;
+        background: #ddd; /* Background color of the slider track */
+        outline: none;
+        margin: 10px 0px;
+      }
+  
+      /* Styling for the slider thumb (handle) */
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--pri-colorLight); /* Color of the slider thumb */
+        cursor: pointer;
+      }
+  
+      /* Styling for the slider thumb (handle) in Firefox */
+      input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .optPop{
+        background: rgba(44, 61, 65, 0.25);
+        z-index: 15;
+        
+
+      }
+ 
+      .ambience{
+        width: 40vw;
+        transition: .3s ease-in-out;
+        position: absolute;
+        bottom: -100%;
+        overflow: hidden;
+        left: 50%;
+        transform: translate(-50%);
+        height: 50vh;
+        background: rgba(44, 61, 65, 0.25);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: solid 1px rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+        border-radius: 10px;        
+      }
+      .popPlacer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+      }
+      .popPlacer h3{
+        color: aliceblue;
+    
+    
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        font-size: 21px;
+      }
+      .ambienceFeatures{
+        width: 100%;
+        height:40vh;
+        overflow-y: auto;
+        overflow-x:  hidden;
+        
+      }
+      .feature{
+        display: flex;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        color: aliceblue;
+       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .featureName{
+        width: 150px;
+        font-size: 17px;
+      }
+      .featureSwitch{
+        padding-right: 0px;
+        margin: 10px 0;
+        
+      }
+      .music{
+        width: 40vw;
+        transition: .3s ease-in-out;
+        position: absolute;
+        bottom: -100%;
+        overflow: hidden;
+        left: 50%;
+        transform: translate(-50%);
+        height: 50vh;
+        background: rgba(130, 166, 173, 0.25);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: solid 1px rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+        border-radius: 10px;       
+      }
+      .musicList{
+        height: 39vh;
+        overflow-y: scroll;
+        padding: 20px 0;
+        overflow-x: hidden;
+      }
+      .musicCat{
+        height: 35px;
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .musicCat button{
+        width: 22%;
+        border-radius: 20px;
+        color: aliceblue;
+        height: 30px;
+        letter-spacing: 1px;
+        transition: .2s ease-in-out;
+        border: transparent;
+        background: rgba(167, 214, 223, 0.25);
+      }
+      .musicCat button:hover{
+        transform: scale(.90);
+        cursor: pointer;
+
+      }
+      .track{
+        width: 95%;
+        overflow: hidden;
+        margin-top: 1px;
+        height: 40px;
+        display: flex;
+        padding-left: 10px;
+        border-radius: 10px;
+        
+        transition: .2s ease-in-out;
+        justify-content: start;
+        align-items: center;
+        background: rgba(167, 214, 223, 0.65);
+    
+    
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    
+    }
+
+
+      .track:hover{
+        cursor: pointer;
+        transform: scale(.95);
+      }
+      .notification{
+        position: absolute;
+        transform: scale(.001);
+        bottom: 130px;
+        left: 5px;
+        transition: .3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .notification img{
+        max-width: 35px;
+        margin-right: 5px;
+      }
+      .actNotification{
+        height: 40px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px ;
+        background: rgba(44, 61, 65, 0.25);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: solid 1px rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+        border-radius: 10px;    
+      }
+      .actNotification p{
+    
+    
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    
+        color:aliceblue;
+        font-size: 16px;
+      }
+      .writeTodo{
+        width: 40vw;
+        transition: .3s ease-in-out;
+        position: absolute;
+        bottom: -100%;
+        overflow: hidden;
+        left: 50%;
+        transform: translate(-50%);
+        height:auto ;
+        background: rgba(130, 166, 173, 0.25);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: solid 1px rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+        border-radius: 10px;  
+      }
+      .listInput{
+        display: flex;
+        height: 30px;
+        width: 90%;
+        border: 1px solid rgb(57, 57, 57);
+        margin: 0 auto;
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+      .listInput input{
+        width: 85%;
+        height: inherit;
+        background: aliceblue;
+    
+    
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    
+        padding: 0 0 0 10px ;
+        font-size: 16px;
+        border-radius: 20px 0 0 20px ;
+        color: black;
+        border: transparent;
+      }
+      .listInput input:focus{
+        outline: none;
+      }
+      .add{
+        background: rgb(209, 225, 240);
+        width: 15%;
+    
+    
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    
+        display: flex;
+        justify-content: center;
+        height: inherit;
+        align-items: center;
+        border-radius: 0 20px 20px 0;
+        cursor: pointer;
+        border-left: 1px solid  rgb(57, 57, 57);
+      }
+    .typedList{
+        overflow-y: scroll;
+        width: 95%;
+        margin: 10px auto;
+        overflow-x: hidden;
+        height: 30vh;
+    }
+    .typedList div{
+        height: 40px;
+        width: 98% !important;
+        overflow: hidden;
+        font-size: 20px;
+        color: aliceblue;
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+        
+    }
+    .typedList button{
+        padding: 10px 30px;
+        background: transparent;
+        color: aliceblue;
+    
+    
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    
+        border: transparent;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .typedList p{
+        width: 90%;
+        font-size: 21px;
+    }
+  
+.save{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+.save button{
+    width: 200px;
+    border-radius: 20px;
+    border: transparent;
+    background: var(--pri-colorLight);
+    color: aliceblue;
+    cursor: pointer;
+
+}
+.chooseToDo{
+        width: 40vw;
+        transition: .3s ease-in-out;
+        position: absolute;
+        bottom: -100%;
+        overflow: hidden;
+        left: 50%;
+        transform: translate(-50%);
+        height: 150px;
+        background: rgba(130, 166, 173, 0.25);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: solid 1px rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+        border-radius: 10px;       
+}
+.chooseBtn{
+    width: 100%;
+    margin: 20px 0;
+    height: 75px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.chooseBtn button{
+    width: 40%;
+    height: 40px;
+    border-radius: 20px;
+    border: transparent;
+    background: var(--pri-colorLight);
+    color: aliceblue;
+    font-size: 15px;
+    cursor: pointer;
+}
+.viewList{
+    width: 40vw;
+    transition: .3s ease-in-out;
+    position: absolute;
+    bottom: -100%;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%);
+    height: 50vh;
+    background: rgba(130, 166, 173, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+    border-radius: 10px;  
+}
+.TaskList{
+    height: 40vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.TaskList button{
+    height: 100px;
+}
+.TaskList .task{
+    display: flex;
+    height: 40px;
+    margin-top: 1px;
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    align-items: center;
+    /* display: none; */
+    color: aliceblue;
+}
+
+
+.TaskList input[type="checkbox"] {
+    margin-left:  20px;
+    margin-right:  20px;
+    border-radius: 50%;
+    transform: scale(1.2);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    appearance: none;
+    padding: 10px; /* Adjust padding for better visibility */
+    background-color: rgb(201, 198, 198); /* Change the background color */
+}
+ /* Style the checkmark inside the checked checkbox */
+ input[type="checkbox"]:checked {
+    background-color: var(--pri-colorLight); /* Change the background color for checked state */
+}
+canvas {
+    display: block;
+    vertical-align: bottom;
+  
+  } /* ---- particles.js container ---- */
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #332f2f1e;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  } /* ---- stats.js ---- */
+  .count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 0px;
+    color: #13e8e9;
+    font-size: 0.8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+  .js-count-particles {
+    font-size: 1.1em;
+  }
+  #stats,
+  .count-particles {
+    -webkit-user-select: none;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  #stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+  }
+  .count-particles {
+    border-radius: 0 0 3px 3px;
+  }
+  
+
+
+
+.rain-overlay {
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.raindrops-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.drop {
+    position: absolute;
+    width: 1px;
+    top: -25px;
+    height: 20px; /* Adjust height as needed */
+    background-color: rgb(255, 255, 255); /* Adjust color as needed */
+    opacity: 0.6; /* Adjust opacity as needed */
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+.breakFocusSwitch{
+    width: 40px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 30px;
+}
+.breakFocus{
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+    transition: .3s ease-in-out;
+    justify-content: center;
+    align-items: center;
+}
+.breakFocus p{
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    color: aliceblue;
+    font-weight: 500;
+    transition: .3s ease-in-out;
+    letter-spacing: 1px;
+}
+
+
+
+.backImage{
+    width: 100vw;
+    position: absolute;
+    z-index: -4 !important;
+    overflow: hidden;
+    display: none;
+    height: 100vh;
+}
+.backImage img{
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+
+.cancelAuth{
+    display: none;
+}
+.musicControl{
+    width: 40px;
+    margin: 6px auto;
+    overflow: hidden;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    
+    transition: .2s ease-in-out;
+    background: rgba(167, 214, 223, 0.65);
+
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.musicControl i{
+    font-size: 26px;
+    cursor:pointer ;
+}
+#musicPlay{
+    display: none;
+}
+#musicStartPlay{
+    display: block;
+}
+#musicPause{
+    display: none;
+}
+.swal2-actions .swal2-styled{
+background: var(--pri-colorLight);
+border: none;
+}
+.swal2-show{
+    color: aliceblue;
+    background: rgba(44, 61, 65, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+    border-radius: 10px;    
+   }
+   .articleBack{
+    width: 100vw;
+    height: 70vh;
+    background: url(./Media/articleBackImage.png)no-repeat center/cover;
+   }
+   .articleBack .articleOverlay{
+    background: rgba(2, 2, 2, 0.4);
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   }
+   .articleOverlay h1{
+    color: aliceblue;
+    font-size: 42px;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+   }
+   .articleOverlay button{
+    width: 200px;
+    transition: .3s ease-in-out;
+    height: 50px;
+    border-radius: 10px;
+    border: transparent;
+    background: var(--pri-colorLight);
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+   }
+   .articleOverlay button:hover{
+    background: transparent;
+    transform: scale(.97);
+    border: 2px solid var(--pri-colorLight);
+    color: aliceblue;
+   }
+   .mainArticle{
+    background: rgb(29, 29, 29);
+    height: auto;
+    width: 100vw;
+   }
+   .articlePlacer{
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0 10px 0 ;
+   }
+   .articlePlacer h2{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    color: aliceblue;
+    margin-bottom: 10px;
+    font-size: 35px;
+   }
+   .articlePlacer h3{
+    /* text-align: center; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    color: aliceblue;
+    margin: 20px 0;
+    font-size: 25px;
+   }
+   .articlePlacer p{
+    color: rgb(201, 201, 201);
+    font-size: 20px;
+    margin: 10px 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+   }
+
+   .articleOverlay p{
+    color: var(--text-color);
+    margin: 10px;
+    font-style: italic;
+    font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+   }
+   .articlePlacer ol {
+    color:rgb(201, 201, 201);
+    margin-left:30px;
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+   }
+   .articlePlacer ol li {
+    margin: 5px 0;
+   }
+   .articlePlacer a{
+    color: var(--pri-colorLight);
+    text-decoration: none;
+   }
+   .issues{
+    background: red;
+    position: absolute;
+    z-index: 20;
+    bottom: 30px;
+    right: 20px;
+    width: auto;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    background: rgba(130, 166, 173, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+    border-radius: 10px; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    color: aliceblue;
+   }
+   .issues p span{
+    color:aliceblue;
+    cursor: pointer;
+   }

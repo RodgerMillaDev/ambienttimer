@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="mediaWrap">
+        <h1>Upload image only</h1>
+        <input type="file" id="imageInput" accept="image/*" required>
+      
+        <button onclick="uploadImage()">Upload</button>
+    </div>
+    
+    <div class="mediaWrap" style="margin-top: 100px;">
+        <h1>Upload Video only</h1>
+
+        <input type="file" id="videoInput" accept="video/*" required>
+      
+        <select name="" id="videoCat">
+            <option value="Anime">Anime</option>
+            <option value="Animals">Animals</option>
+            <option value="Nature">Nature</option>
+            <option value="Exclusive">Exclusive</option>
+            <option value="Cities">Cities</option>
+        </select>
+        <button onclick="uploadVideo()">Submit</button>
+    </div>
+    
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+<script src="config.js"></script>
+<script src="mediaupload.js"></script>
+
+
+</body>
+</html>

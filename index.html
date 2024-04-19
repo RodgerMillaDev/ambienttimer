@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9TNRG1CWJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9TNRG1CWJT');
+</script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="./Media/newLogo.png" />
+    <meta name="description" content="Discover our simple yet effective online aesthetic ambient timer to boost focus, efficiency, and productivity. Learn the Pomodoro technique, its history, and how it works.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resp.css">
+    <script src="js/fontawsome.js" crossorigin="anonymous"></script>
+    <script src="js/lordicon.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <title>Ambient Timer | Online Aesthetic Timer for Deep Focus     </title>
+    <style>
+        
+:root{
+ --pri-colorLight:#1d90c1;
+ --pri-color:#1c4791;
+ --pri-colorDark:#041e54;
+ --text-color:aliceblue;
+}
+@font-face {
+    font-family: clockFont;
+    src: url(./clockFont/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf);
+}
+  /* ToggleButton.css */
+  .toggle-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b7b7b7;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(254, 254, 254);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--pri-colorLight);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .onlineStatus{
+    padding: 10px 0;
+    margin-left: 30px;
+  }
+  .status-label {
+    margin-left: 10px;
+  }
+  .swal2-popup{
+    background: rgba(130, 166, 173, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
+    border-radius: 10px;  
+    color: aliceblue;
+  }
+  .swal2-actions button{
+    background: #1d90c1;
+  }
+  .swal2.title{
+    color: aliceblue;
+  }
+
+
+
+/* newClock css */
+
+
+
+button {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: white;
+	font-size: 18px;
+    margin: 7px;
+    cursor: pointer;
+}
+
+button:disabled {
+	color: rgba(128,128,128,32);
+}
+#controls{
+    width: 270px !important;
+    height: 150px !important;
+    border-radius: 15px;
+    background: rgba(44, 61, 65, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    
+    color: aliceblue;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#controls p{
+    text-align: center;
+    font-family: clockFont;
+    
+    color:var(--text-color);
+    font-size: .85em;
+	font-weight: 900;
+	text-transform: uppercase;
+    padding-top: 10px !important;
+}
+
+
+
+.control-value {
+	font-size: 23px;
+}
+.controls-block
+{
+    display: flex;
+    width: 90%;
+    margin: 5px;
+    justify-content: space-between;
+}
+
+.controls-block > button {
+	background-color: transparent;
+	color: white;
+	font-size: 1.5em;
+	min-width: 32px;
+	vertical-align: bottom;
+}
+
+#clock-container {
+
+    font-family: clockFont;
+    overflow: hidden;
+    color: aliceblue;
+
+    transition: .3s ease-in-out;
+    display: flex;
+    border-radius: 15px !important;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height:150px !important;
+    width: 270px !important;
+    background: rgba(44, 61, 65, 0.25);
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+
+}
+
+#clock-content {
+	display: flex;
+    justify-content: center;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#clock-counter {
+	font-size: 43px;
+    height: auto;
+	text-align: center;
+
+}
+
+#clock-container > button {
+	border: none;
+	background-color: transparent;
+	color: white;
+	font-size: 1em;
+	min-width: 95px;
+}
+
+#clock-label {
+	font-size: 17px;
+    font-weight: 800;
+    color:var(--text-color);
+}
+#preloader{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: #1A1A1A;
+    z-index: 99;
+    position: fixed;
+}
+
+
+
+#inner, #inner div {
+    z-index: -1;
+    width: 102%;
+    overflow: hidden;
+    left: -1px;
+    position: absolute;
+}
+
+#inner {
+    border-top-width: 0;
+    background-color: rgba(0, 154, 178, 0.433);
+    transition: .5s ease-in-out;
+    bottom: 0;
+    border-radius: 15px;
+    height: 100%;
+    width: 0%;
+}
+
+.clockSet,.clockSetB
+{
+    height: 30px;
+    transition: .6s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+.clockButtons button{
+  font-size: 16px;
+}
+.clockButtons{
+    height: auto;
+    display: flex;
+    width: 210px;
+    justify-content: space-around;
+}
+
+.clockSet i,
+.clockSetB i
+{
+    font-size: 20px;
+}
+.clockSet:hover{
+    transform: rotate(180deg);
+}
+
+/* newClock css */
+
+
+
+
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 270px !important;
+    height: 150px !important;
+}
+
+.front {
+    z-index: 2;
+    border-radius: 50%;
+
+}
+
+.back {
+    border-radius: 50%;
+    display: flex;
+    
+    transform: rotateY(180deg);
+}
+
+
+.sessionaddminus,
+.breakaddminus
+{
+    width: 90px;
+    display: flex;
+    font-size: 17px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+
+
+    </style>
+</head>
+<body id="fidiBody">
+    <div id="preloader">
+
+    </div>
+    <div id="heroOne">
+        <div class="backVideo">
+            <video   autoplay muted  loop id="actBackVideo" preload="true" src="./Media/firevida.mp4"></video>
+            
+            <div class="videoOverlay"></div>
+            <div class="rain-overlay" id="rainOverlay">
+                <div class="raindrops-container"></div>
+            </div>
+            <div class="snowOverlay" id="snowOverlay">
+            <div id="particles-js"></div>
+            <div class="count-particles"> <span class="js-count-particles"></span> </div> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+            </div>
+
+        </div>
+
+        <div class="issues">
+           
+            <p>  <span onclick="toReport()">Report issue</span></p>
+        </div>
+
+
+        <div class="notification" id="notification" >
+            <img src="./Media/newLogo.png" alt="">
+            <div class="actNotification">
+                <p id="notifyTXT"></p>
+            </div>
+        </div>
+
+    
+        <div class="blog" id="Blog">
+           <div class="blogWrap">
+            <div class="actBlog">
+                <!-- <img width="30px" src="./Media/image_processing20200112-19522-11vt4ua-removebg-preview.png" alt=""> -->
+                <img width="30px" src="./Media/newLogo.png" alt="">
+                <p id="psych">Pomodoro Panda is now Ambient Timer. Stay productive!</p>
+            </div>
+            <div class="blogCancel" onclick="blogCancel()">
+                <i class="fa-solid fa-x"></i>
+
+            </div>
+           </div>
+        </div>
+
+
+
+
+        <div class="flip-container" id="flip-container">
+            <div class="flipper" id="flipper">
+                <div class="front">
+                    <!-- Your clock container HTML -->
+                    <div id="clock-container" >
+                        <div id="inner"></div>
+                
+                        <div id="clock-content">
+                            <div id="clock-label">FOCUS</div>
+                            <div id="clock-counter">25:00</div>
+                            <div class="separatorL"> </div>
+
+                            <div class="clockButtons">
+                            <button id="clock-button">Start</button>
+                            <button id="reset-button" disabled>Reset</button>
+                            <div class="clockSet" onclick="toclocksettings()">
+                                <i class="fa-solid fa-gear"></i>
+                               </div>
+                           </div>
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="back" >
+                    <!-- Your control div HTML -->
+                    <div id="controls">
+
+
+                        <div id="break-timer" class="controls-block">
+                            <p><span class='controls-label'>Break <span></p>
+                          <div class="breakaddminus">
+                            <button id="break-minus">&#8722;</button>
+                            <span id="break-indicator" class="control-value">5</span>
+                            <button id="break-plus">&#43;</button>
+                          </div>
+                        </div>
+                        <div class="separatorL"></div>
+                        <div id="session-timer" class="controls-block">
+                            <p><span class='controls-label'>Focus </span></p>
+                         <div class="sessionaddminus">
+                            <button id="session-minus">&#8722;</button>
+                            <span id="session-indicator" class="control-value">25</span>
+                            <button id="session-plus">&#43;</button>
+                         </div>
+                        </div>	
+                        <div class="clockSetB" onclick="toclockcounter()">
+                            <i class="fa-solid fa-arrow-left"></i>
+                           </div>
+        
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div class="ambience optPop" id="Ambience" >
+            <div class="genPlacer">
+                <div onclick="optCancel()" class="optCancel">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+             <div class="popPlacer">
+                <h3>Ambience</h3>
+             </div>
+
+                <div class="ambienceFeatures">
+                    <div class="feature">
+
+                        <div class="featureName">
+                            <p>Birds</p>
+                        </div>
+                        <div class="featureSwitch">
+                                                               <div class="onlineStatus"  >
+                                                                <div class="toggle-container">
+                                                                <label class="switch">
+                                                                    <input type="checkbox" id="BirdSoundToggle" onchange="birdSound()" >
+                                                                    <span class="slider"></span>
+                                                                </label>
+                                                               
+                                                                </div>
+                                                            </div>
+                                                            
+                        </div>
+                        
+                        
+
+                           <input type="range" name="" class="volume" id="BirdVolume" min="0" max="1" step="0.01">
+                    </div>
+                    <div class="feature">
+                        <div class="featureName">
+                            <p>Rain </p>
+
+                        </div>
+                        
+                        <div class="featureSwitch">
+                            <div class="onlineStatus"  >
+                             <div class="toggle-container">
+                             <label class="switch">
+                                 <input type="checkbox" id="RainSoundToggle" onchange="rainSound()" >
+                                 <span class="slider"></span>
+                             </label>
+                            
+                             </div>
+                         </div>
+                         
+                        </div>
+                           <input type="range" name="" class="volume" id="RainVolume"  min="0" max="1" step="0.01">
+                    </div>
+                    <div class="feature">
+                        <div class="featureName">
+                            <p>Fireplace </p>
+
+                        </div>
+                        
+                        <div class="featureSwitch">
+                            <div class="onlineStatus"  >
+                             <div class="toggle-container">
+                             <label class="switch">
+                                 <input type="checkbox" id="FireplaceToggle" onchange="fireSound()" >
+                                 <span class="slider"></span>
+                             </label>
+                            
+                             </div>
+                         </div>
+                         
+                        </div>
+                           <input type="range" name="" class="volume" id="FireVolume"  min="0" max="1" step="0.01">
+                    </div>
+                    <div class="feature">
+                        <div class="featureName">
+                            <p>Waves </p>
+
+                        </div>
+                        
+                        <div class="featureSwitch">
+                            <div class="onlineStatus"  >
+                             <div class="toggle-container">
+                             <label class="switch">
+                                 <input type="checkbox" id="WaveToggle" onchange="waveSound()">
+                                 <span class="slider"></span>
+                             </label>
+                            
+                             </div>
+                         </div>
+                         
+                        </div>
+                           <input type="range" name="" class="volume" id="WaveVolume"  min="0" max="1" step="0.01">
+                    </div>
+                    <div class="feature">
+                        <div class="featureName">
+                            <p>Breeze </p>
+
+                        </div>
+                        
+                        <div class="featureSwitch">
+                            <div class="onlineStatus"  >
+                             <div class="toggle-container">
+                             <label class="switch">
+                                 <input type="checkbox" id="BreezeToggle" onchange="Breeze()">
+                                 <span class="slider"></span>
+                             </label>
+                            
+                             </div>
+                         </div>
+                         
+                        </div>
+                           <input type="range" name="" class="volume" id="BreezeVolume"  min="0" max="1" step="0.01">
+                    </div>
+                    <div class="feature">
+                        <div class="featureName">
+                        <p>Snowfall</p>
+
+                        </div>
+                        
+                        <div class="featureSwitch">
+                            <div class="onlineStatus"  >
+                             <div class="toggle-container">
+                             <label class="switch">
+                                 <input type="checkbox" id="SnowfallToggle" onchange="snowFall()">
+                                 <span class="slider"></span>
+                             </label>
+                             </div>
+                         </div>
+                         
+                       </div>
+                    </div>
+                    <div class="feature">
+                        <div class="featureName">
+                            <p>Rainfall</p>
+
+                        </div>
+                        
+                        <div class="featureSwitch">
+                            <div class="onlineStatus"  >
+                             <div class="toggle-container">
+                             <label class="switch">
+                                 <input type="checkbox" id="RainFallToggle" onclick="createRaindrops()" >
+                                 <span class="slider"></span>
+                             </label>
+                            
+                             </div>
+                         </div>
+                         
+                        </div>
+                    </div>
+                 
+                </div>
+                 
+
+
+            </div>
+
+
+
+        </div>
+
+        <!-- todo List  -->
+
+        <div class="writeTodo optPop" id="WriteList"> 
+            <div class="genPlacer">
+                <div onclick="optCancel()" class="optCancel">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+             <div class="popPlacer">
+                <h3>To Do List</h3>
+             </div>
+                <div class="listInput">
+                    <input type="text" maxlength="40" id="typingTask" placeholder="Write your task" onkeydown="handleKeyPress(event)">
+                    <div class="add" onclick="addTyped()">
+                        <p>Add</p>
+                    </div>
+                </div>
+
+                <div class="typedList" id="typedList">
+                  
+
+                </div>
+                  
+                <div class="save">
+                    <button onclick="saveList()">Save List</button>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- View List  -->
+        <div class="optPop viewList" id="viewList" >
+            <div class="genPlacer">
+                <div onclick="optCancel()" class="optCancel">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+             <div class="popPlacer">
+                <h3>My Tasks</h3>
+                </div>
+                <div class="TaskList" id="taskList">  
+                   
+
+                    <button>Clear Tasks</button>
+                </div>
+
+
+                </div>
+                </div>
+
+        <!-- music  -->
+
+        <div class="optPop music " id="Music" >
+            <div class="genPlacer">
+                <div onclick="optCancel()" class="optCancel">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+             <div class="popPlacer">
+                <h3>Music</h3>
+                </div>
+                
+                <div class="musicCat">
+                    <button>Relaxing</button>
+                    <button>Sad</button>
+                    <button>Chill</button>
+                    <button>Uplifting</button>
+                </div>
+                <div class="separatorL"></div>
+                <div class="musicList">
+                    <div class="musicControl">
+                        <i  id="musicStartPlay" onclick="playNextTrack()" class="fa-solid fa-play"></i>
+                        <i  id="musicPlay" onclick="backtrackPlay()" class="fa-solid fa-play"></i>
+                        <i  id="musicPause" onclick="backtrackPause()" class="fa-solid fa-pause"></i>
+                    </div>
+               
+                </div>
+             </div>
+            </div>
+        </div>
+
+
+
+        <div class="backgroundMenu optPop" id="backgroundMenu">
+
+            <div class="genPlacer">
+                <div onclick="optCancel()" class="optCancel">
+                    <i class="fa-solid fa-x"></i>
+
+                </div>
+                <div class="genWrap">
+                 
+                    
+                    <div class="selectedCat">
+                        <h3>Backgrounds</h3>
+                        <div class="selectedWrap" id="selectedWrap" >
+                            <!-- <div class="selectCardV">
+                                <video src="./Media/japans-majestic-peaks-and-cherry-blossoms.1920x1080.mp4"></video>
+                            </div>
+                            -->
+                          
+                        </div>
+                        
+                    </div>
+                
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- select to do  -->
+
+
+        <div class="chooseToDo optPop" id="chooseList"  >
+            <div class="genPlacer">
+                <div onclick="optCancel()" class="optCancel">
+                    <i onclick="optCancel()" class="fa-solid fa-x"></i>
+                </div>
+             <div class="popPlacer">
+                <h3>What do you want to do?</h3>
+                </div>
+
+                <div class="chooseBtn">
+
+                    <button onclick="writeList()">Write List</button>
+                    <button onclick="viewTask()">View List</button>
+                </div>
+                
+            </div>
+            </div>
+
+            <!-- the ambience audio  -->
+            <div class="ambienceAudio" style="position: absolute; z-index: -1; top: 0; transform: scale(.0001); ">
+                <audio controls loop  id="fidiBeachSound" >
+                    <source src="/Media/beachSound.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+                <audio controls loop id="fidiBirdSound">
+                    <source src="/Media/birdSound.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+                <audio controls loop  id="fidiBreeezeSound">
+                    <source src="/Media/breezeSound.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+                <audio controls loop id="fidiRainSound">
+                    <source src="/Media/rainSound-[AudioTrimmer.com].mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+                  <audio controls loop id="fidiFireSound">
+                    <source src="/Media/fireaudiotwo.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+           
+                <audio controls loop id="fidiWaveSound">
+                    <source src="/Media/rainSound.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+                <audio controls id="fidiBackMusic">
+                    <source src="/Media/rainSound.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+                <audio controls id="fidiNotifySound">
+                    <source src="/Media/Sounds/y2mate.com - iPhone Text Message Sent Apple Sound  Sound Effect for Editing.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                  </audio>
+           
+              
+            </div>
+
+        <div class="options" id="Options">
+              <div class="optCont">
+                <div class="optCard" onclick="backMedia()">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/bzqvamqv.json"
+                    trigger="hover"
+                    style="width:60px;height:60px">
+                    </lord-icon>
+                    <p>Background</p>
+                </div>
+                <div class="optCard" onclick="ambience()">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/zdzignng.json"
+                        trigger="hover"
+                        style="width:60px;height:60px">
+                    </lord-icon>
+                    <p>Ambience</p>
+                       
+             </div>
+    
+         
+                <div class="optCard" onclick="todoList()">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/vhyuhmbl.json"
+                    trigger="hover"
+                    style="width:60px;height:60px">
+                    
+                </lord-icon> 
+                <p>To Do List</p>
+                       
+             </div>
+        
+             <div class="optCard" id="FullFocus" onclick="fullfocus()">
+    
+            <lord-icon
+                src="https://cdn.lordicon.com/nojikuvk.json"
+                trigger="hover"
+                style="width:60px;height:60px">
+            </lord-icon>
+
+            <p>Full Focus</p>
+              
+            </div>
+              </div>
+
+
+
+       </div>
+    </div>
+
+
+    <section class="Gblog">
+        <div class="gplacer">
+            <div class="gwrap">
+             <h1>The Pomodoro Technique and Timer Explained            </h1>
+              <div class="blogcard">
+                <p>
+                    The Pomodoro technique, among all productivity techniques, is unique in its own way, as you’re about to find out. What pushes this idea to a functioning tool is the Pomodoro timer. 
+                    
+                    This overview of the Pomodoro technique will track its way, starting from the humble kitchen timer to the sophisticated digital timer, to have helped in improving focus and productivity for millions around the world.
+                    
+                    We will also quickly talk about how choosing the correct timer can change your productivity. Let's get started, shall we? 
+                    
+                    But first things first, what’s the Pomodoro technique? Here’s all there is to know (or at least the most important things).
+                    </p>
+              </div>
+              <div class="blogcard">
+                <h4>Pomodoro Technique Explained </h4>
+                <p>The Pomodoro Technique was developed by Francesco Cirillo in the late 1980s and named after <a href="https://www.collinsdictionary.com/dictionary/english-italian/tomato"> the Italian word for "tomato," </a> inspired by the tomato-shaped kitchen timer Cirillo used as a university student.
+
+                    If you’ve ever heard the term "tomato timer," then now you know where it comes from. 
+                    </p>
+              </div>
+              <div class="blogcard">
+                <h4>How It Works</h4>
+                <p>The approach breaks down work into intervals, usually 25 minutes long. Then each of the intervals is separated by short breaks.
+
+                    Each interval is referred to as a "Pomodoro" for the timer that keeps track of them.
+                    
+                    The Pomodoro technique aims at achieving a high focus and flow state. It, in turn, reduces the impact of interruptions on the flow of work.
+                    
+                    Understandably, there is this tendency that when you finally find your rhythm, you want to press on the gas pedal even harder and cover as much as you possibly can. 
+                    
+                    However, taking a more extended break, usually after every four Pomodoros, gives the mind enough rest and recharges. This work and rest cycle not only make sure that productivity is at its maximum but also guarantee that the mind remains fresh and alert throughout the day.
+                    
+                    So, how long is the long break? Actually, this is up to your discretion, but on average, a 10 to 15 minute break is considered the standard. </p>
+              </div>
+              <div class="blogcard">
+                <h4>Pomodoro Timers: A Journey</h4>
+                <p>This used to be nothing but a physical, mechanical kitchen timer. Fast forward many decades later, this timer has successfully rolled off the kitchen timer and fallen right into our browsers.
+
+                    And, it’s no longer just a kitchen timer to remind you when to check the chicken or stop beans from spilling over the pot. Rather, it’s now a productivity timer, helping millions of people across the globe smash their productivity goals with a click of a button.
+                    
+                    This timer at the very top of this page is a fine example of its evolution from the physical to its digital form.
+
+                    In the digital era, online Pomodoro timers have changed how people relate to the technique. These digital solutions offer more than just timing functionality; they come equipped with features like task tracking, customizable intervals, and analytics to monitor productivity over time (oh, and by the way, that’s one of the things we’re working on).
+                    </p>
+              </div>
+              <div class="blogcard">
+                <h4>The Benefits</h4>
+                <p>
+                    Online aesthetic Pomodoro timers, like ours, are growing increasingly popular each passing day. That’s partly because they are convenient; you don’t need a physical timer to stay disciplined, eyes locked on the goal.
+                    
+                    Our timer is different—it offers personalized time brackets for different tasks or needs, ambience sound settings to make the focus process much more engaging and absorbing, and a choice of background, whether photo or video.
+                    
+                    We are also in the process of adding features for logging and tracking completed pomodoros, among others. This will help the users to analyze their patterns of productivity and adjust them wherever as needed. 
+                    </p>
+              </div>
+              <div class="blogcard">
+                <h4>How to Choose </h4>
+                <p>Deciding on the best Pomodoro timer is usually more of a  personal preference. That said, the following are some important factors to consider: 
+
+                    Look for timers with customization options, like adjustable time intervals.
+                    A user-friendly interface with a simple, neat, design. 
+                    It should be easy to set up and start without a steep learning curve (this is exactly what our timer is).
+                    A functional timer (how can you forget that?) 
+                     </p>
+              </div>
+              <div class="blogcard">
+                <h4>About Our Aesthetic Pomodoro Timer                </h4>
+                <p>Although the functionality is key, design and aesthetics of the Pomodoro timer equally matter. A well-designed timer, be it a physical device or a web application like ours, can bring about the joy of the work process.
+
+                    This serves to reduce the psychological barrier to get started. Our aesthetic pomodoro timer with a clean and minimalist interface serves to reduce the cognitive load. 
+                     </p>
+              </div>
+              <h1>FAQs</h1>
+              <div class="blogcard">
+                <p>We’ve answered some of the most frequently-asked questions about <a href="https://pomodoropanda.com"> Pomodoro Panda</a> below. 
+
+                     </p>
+              </div>
+              <div class="blogcard">
+                <h4>Can I Upload My Own Background Music?</h4>
+                <p>At the moment, our web app only supports our pre-configured sounds. In the future, we’ll have that functionality in place.
+                     </p>
+              </div>
+              <div class="blogcard">
+                <h4> Can I Use Pomodoro Panda on Mobile?</h4>
+                <p>Yes, this app is responsive, meaning you can use it on a wide range of devices, including mobile. For the best experience, we recommend using two screens, one for the app, and the other for your tasks. 
+                     </p>
+              </div>
+              <div class="blogcard">
+                <h4>Can I Track My Productivity Using Pomodoro Panda?</h4>
+                <p>Not at the moment, but that’s also one of the things we’re working on. 
+                     </p>
+              </div>
+              <div class="blogcard">
+                <h4>How Do I Set My Own Time?</h4>
+                <p>It’s simple - click into the hour or seconds section of the app to manually set your preferred time. Make sure you switch the toggle to the appropriate timer i.e., focus or break. By default, the timer is set at 25 minutes of focus time and 5 minutes of break time, per the original Pomodoro technique.
+
+                    But if you want to focus even longer, why not? 
+                    
+                     </p>
+              </div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="separatorLF"></div>
+            <div class="footPlacer">
+                <div class="leftfoot">
+                    <img  src="./Media/newLogo.png" alt="">
+                    <p>Ambient Timer</p>
+                </div>
+                <div class="rightfoot">
+                    <p>Copyright &copy 2024 Ambient Timer. All Rights Reseved.</p>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+    </section>
+    <script>
+        // Path to your JSON file
+        const animationPath ='./Media/New-file.json';
+      
+        // Load the animation
+        const animation = lottie.loadAnimation({
+          container: document.getElementById('preloader'), // the dom element that will contain the animation
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: animationPath // path to the animation json
+        });
+        window.addEventListener('load', function() {
+    document.getElementById("preloader").style.display = "none";
+});
+
+      </script>
+
+    
+
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+
+<script src="js/timerWorker.js"></script>
+<script src="js/script.js"></script>
+
+<script src="config.js"></script>
+<script src="index.js"></script>
+<script src="music.js"></script>
+
+</body>
+</html>
