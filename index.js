@@ -61,6 +61,8 @@ function fullfocus(){
     document.getElementById("viewList").style.bottom="-100%";
     document.getElementById("WriteList").style.bottom="-100%";
     document.getElementById("Blog").style.transform="scale(0.0001)";
+    document.getElementById("spotify").style.transform="scale(0.0001)"
+    document.getElementById("playList").style.transform="scale(0.0001)"
 
 
     Swal.fire("To return, double click on screen")
@@ -71,7 +73,9 @@ function fullfocus(){
 
 document.getElementById("fidiBody").ondblclick=function(){
     document.getElementById("Options").style.scale="1";
-    document.getElementById("flip-container").style.scale="1"; 
+    document.getElementById("flip-container").style.scale="1";
+    document.getElementById("spotify").style.transform="scale(1)"
+    document.getElementById("playList").style.transform="scale(1)" 
 }
 
 
