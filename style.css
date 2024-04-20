@@ -1556,7 +1556,6 @@ border: none;
     text-decoration: none;
    }
    .issues{
-    background: red;
     position: absolute;
     z-index: 20;
     bottom: 30px;
