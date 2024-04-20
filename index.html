@@ -375,11 +375,11 @@ button:disabled {
             <p>  <span onclick="toReport()">Report issue</span></p>
         </div>
 
-        <div class="spotify">
+        <div onclick="showplayList()" id="spotify">
             <i class="fa-brands fa-spotify"></i>
         </div>
         <div id="playList">
-            <div onclick="playlistCancel" id="playlistCancel">
+            <div onclick="playlistCancel()" id="playlistCancel">
                 <i class="fa-solid fa-x"></i>
               </div>
             
@@ -987,11 +987,8 @@ button:disabled {
 
     </section>
     <script>
-        // Path to your JSON file
         const animationPath ='./Media/New-file.json';
-      
-        // Load the animation
-        const animation = lottie.loadAnimation({
+              const animation = lottie.loadAnimation({
           container: document.getElementById('preloader'), // the dom element that will contain the animation
           renderer: 'svg',
           loop: true,
@@ -1002,6 +999,16 @@ button:disabled {
     document.getElementById("preloader").style.display = "none";
 });
 
+function showplayList(){
+    document.getElementById("spotify").style.display="none"
+    document.getElementById("playList").style.left="1%"
+
+}
+function playlistCancel(){
+    document.getElementById("spotify").style.display="flex"
+    document.getElementById("playList").style.left = "-105%";
+
+}
       </script>
 
     

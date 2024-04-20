@@ -1581,7 +1581,7 @@ border: none;
     color:aliceblue;
     cursor: pointer;
    }
-   .spotify{
+   #spotify{
     width: 50px;
     top: 6%;
     cursor: pointer;
@@ -1599,7 +1599,7 @@ border: none;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
     border-radius: 10px;   
  }
- .spotify i{
+ #spotify i{
     font-size: 30px;
     color: green;
  }
@@ -1607,11 +1607,12 @@ border: none;
     width: 20%;
     top: 6%;
     cursor: pointer;
-    left: 10px;
+    left: -100%;
     height: 200px;
     position: absolute;
     flex-direction: column;
     display: flex;
+    transition: .3s ease-in-out;
     justify-content: center;
     align-items: end;
     background: rgba(130, 166, 173, 0.25);
