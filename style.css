@@ -868,14 +868,7 @@ transform: scale(.95);
     background-color: var(--pri-color);
     cursor: pointer;
   }
-  /* .volume{
-    width: 100px;
-    color: var(--pri-colorLight);
-    height: 5px;
-    border-radius: 20px;
-
-    
-  } */
+ 
 
     /* Styling for the range input */
     input[type="range"] {
@@ -1462,7 +1455,7 @@ border: none;
    .articleBack{
     width: 100vw;
     height: 70vh;
-    background: url(./Media/articleBackImage.png)no-repeat center/cover;
+    background: url(./Media/firebackpages.png)no-repeat center/cover;
    }
    .articleBack .articleOverlay{
     background: rgba(2, 2, 2, 0.4);
