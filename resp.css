@@ -408,27 +408,7 @@
     font-size: 30px;
     color: green;
  }
- #playList{
-    width: 95%;
-    top: 16%;
-    cursor: pointer;
-    left: -100%;
-    z-index: 30;
-    height: 200px;
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    transition: .3s ease-in-out;
-    justify-content: center;
-    align-items: end;
-    background: rgba(130, 166, 173, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: solid 1px rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
-    border-radius: 10px;  
-  }
+
 }
 
 

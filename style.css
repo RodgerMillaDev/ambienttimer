@@ -503,14 +503,11 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 .actTimer{
     width: 100%;
     height: auto !important;
-    /* height: 100px !important; */
     display: flex;
-    /* background: green; */
     justify-content: center;
     align-items: center;
 }
 .actTimer i{
-    /* color: red; */
     font-size: 25px;
     transition: .2s ease-in-out;
     color: aliceblue;
@@ -666,7 +663,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
     border-radius: 10px;
 }
 .optCard p{
-    font-size: 18px;
+    font-size: 16px;
 }
 .optCard:hover{
     transform: scale(1.1);
@@ -975,7 +972,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
         overflow: hidden;
         left: 50%;
         transform: translate(-50%);
-        height: 50vh;
+        min-height: 25vh;
         background: rgba(130, 166, 173, 0.25);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
@@ -1118,19 +1115,18 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
         outline: none;
       }
       .add{
-        background: rgb(209, 225, 240);
+        /* background: rgb(209, 225, 240); */
+        background: var(--pri-colorLight);
         width: 15%;
-    
-    
-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
-    
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
         display: flex;
         justify-content: center;
         height: inherit;
+        color: aliceblue;
         align-items: center;
         border-radius: 0 20px 20px 0;
         cursor: pointer;
-        border-left: 1px solid  rgb(57, 57, 57);
+        border-left: 1px solid  rgba(104, 104, 104, 0.332);
       }
     .typedList{
         overflow-y: scroll;
@@ -1183,6 +1179,8 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 .save button{
     width: 200px;
     border-radius: 20px;
+    height: 100%;
+    font-size: 16px;
     border: transparent;
     background: var(--pri-colorLight);
     color: aliceblue;
@@ -1581,7 +1579,7 @@ border: none;
     height: 50px;
     position: absolute;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background: rgba(130, 166, 173, 0.25);
     backdrop-filter: blur(12px);
@@ -1594,26 +1592,11 @@ border: none;
  #spotify i{
     font-size: 30px;
     color: green;
+
  }
  #playList{
-    width: 20%;
-    top: 6%;
-    cursor: pointer;
-    left: -100%;
-    height: 200px;
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    transition: .3s ease-in-out;
-    justify-content: center;
-    align-items: end;
-    background: rgba(130, 166, 173, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: solid 1px rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  
-    border-radius: 10px;  
+  
+
   }
   #playlistCancel{
     height: 50px;
@@ -1625,4 +1608,9 @@ border: none;
   }
   #playlistCancel i{
     font-size: 23px;
+  }
+  .optCard i{
+    margin-bottom: 4px;
+    font-size: 35px;
+    color: green;
   }

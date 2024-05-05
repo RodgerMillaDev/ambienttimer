@@ -375,28 +375,6 @@ button:disabled {
             <p>  <span onclick="toReport()">Report issue</span></p>
         </div>
 
-        <div onclick="showplayList()" id="spotify">
-            <i class="fa-brands fa-spotify"></i>
-        </div>
-        <div id="playList">
-            <div onclick="playlistCancel()" id="playlistCancel">
-                <i class="fa-solid fa-x"></i>
-              </div>
-            
-            <iframe
-            title="Spotify Embed: Recommendation Playlist"
-            src="https://open.spotify.com/embed/playlist/5OMakNsMxwhHhAfMu1YgWi?utm_source=generator&theme=0"
-            width="100%"
-            height="100%"
-            frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-          
-          
-        </div>
-
-
         <div class="notification" id="notification" >
             <img src="./Media/newLogo.png" alt="">
             <div class="actNotification">
@@ -405,10 +383,9 @@ button:disabled {
         </div>
 
     
-        <div class="blog" id="Blog">
+        <!-- <div class="blog" id="Blog">
            <div class="blogWrap">
             <div class="actBlog">
-                <!-- <img width="30px" src="./Media/image_processing20200112-19522-11vt4ua-removebg-preview.png" alt=""> -->
                 <img width="30px" src="./Media/newLogo.png" alt="">
                 <p id="psych">Pomodoro Panda is now Ambient Timer. Stay productive!</p>
             </div>
@@ -417,7 +394,7 @@ button:disabled {
 
             </div>
            </div>
-        </div>
+        </div> -->
 
 
 
@@ -703,20 +680,19 @@ button:disabled {
                 <h3>Music</h3>
                 </div>
                 
-                <div class="musicCat">
-                    <button>Relaxing</button>
-                    <button>Sad</button>
-                    <button>Chill</button>
-                    <button>Uplifting</button>
-                </div>
-                <div class="separatorL"></div>
-                <div class="musicList">
-                    <div class="musicControl">
-                        <i  id="musicStartPlay" onclick="playNextTrack()" class="fa-solid fa-play"></i>
-                        <i  id="musicPlay" onclick="backtrackPlay()" class="fa-solid fa-play"></i>
-                        <i  id="musicPause" onclick="backtrackPause()" class="fa-solid fa-pause"></i>
-                    </div>
-               
+                <div id="playList">
+                    
+                    <iframe
+                    title="Spotify Embed: Recommendation Playlist"
+                    src="https://open.spotify.com/embed/playlist/5OMakNsMxwhHhAfMu1YgWi?utm_source=generator&theme=0"
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  ></iframe>
+                  
+                  
                 </div>
              </div>
             </div>
@@ -841,6 +817,11 @@ button:disabled {
                     
                 </lord-icon> 
                 <p>To Do List</p>
+                       
+             </div>
+                <div class="optCard" onclick="Music()">
+                    <i class="fa-brands fa-spotify"></i>
+                    <p>Spotify</p>
                        
              </div>
         
