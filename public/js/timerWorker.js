@@ -14,6 +14,7 @@ function countdown() {
     }
 }
 
+
 onmessage = function(event) {
     const { type, payload } = event.data;
     //console.log("Message received:", type); // Log received message type
